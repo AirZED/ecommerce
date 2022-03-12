@@ -1,0 +1,439 @@
+:root{
+    --alert-color: rgb(255, 21, 5);
+    --background-color: rgb(239, 239, 241);
+    --highlight-color: rgb(229, 238, 255);
+    --border: .1rem solid rgb(1, 0, 251);
+    --main-color:rgb(1, 0, 251);
+    --icon-hover: rgb(97, 144, 255);
+}
+
+html{
+    overflow-x: hidden;
+    font-family:'Lato';
+    color: rgb(80, 80, 80);
+    letter-spacing: 0.03rem;
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+    transition: 2s linear;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+    color: var(--main-color);
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #ccc ;
+    border-radius: .3rem;
+}
+
+body{
+    background: var(--background-color);
+    display: grid;
+    block-size: auto;
+    top: 0; right: 0; left:0;
+    padding: 0rem; margin: 0;
+    width: auto;
+    position: relative;
+    
+}
+
+section{
+    margin: 0 4rem;
+    display: flex;
+ 
+}
+
+
+header{
+    background-color: white;
+    block-size: 6rem;
+    position: fixed;
+    top: 0; right: 0; left: 0;
+    inline-size: auto;
+    z-index: 1000;
+    border: var(--border);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    margin: 0;
+}
+
+
+
+header .logo img{
+    inline-size: 5rem;
+
+}
+
+header .nav-bar{
+    flex-wrap: nowrap;
+    margin: 0 3rem;
+}
+
+header .nav-bar div{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+header .nav-bar .login{
+    display: none;
+}
+header .nav-bar a{
+    font-weight: 600;
+    text-decoration: none;
+    padding: .5rem .5rem;
+    font-size: 1rem;
+    display: flex;
+    white-space: nowrap;
+}
+
+header .nav-bar a:hover{
+    background-color: var(--main-color);
+    border-radius: .5rem;
+    color: white;
+}
+
+header .cart-section{
+    display: flex;
+    height: 6rem;
+    align-items: center;
+    gap: .2rem;
+    margin-left: 2rem;
+}
+
+header .cart-section .cart, header .cart-section .notification, header .cart-section .phn-search, header .cart-section .more-bar{
+    position: relative;
+    min-width: 3.5rem;
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .4rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+header .cart-section .cart:hover, header .cart-section .notification:hover, header .cart-section .phn-search:hover, header .cart-section .more-bar:hover{
+    background-color: var(--highlight-color);
+}
+
+header .cart-section .phn-search, header .cart-section .phn-search .fas, header .cart-section .more-bar, header .cart-section .more-bar .fas{
+    display: none;
+}
+
+header .cart-section .fas{
+    font-size: 2rem;
+    color: var(--main-color);
+    display: inline-block;
+}
+
+header .cart-section .no{
+    z-index: 200;
+    background-color: var(--alert-color);
+    padding: .2rem;
+    font-size: 1rem;
+    color: black;
+    border-radius: 50%;
+    inline-size: 1rem;
+    block-size: 1rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
+
+
+header .cart-section .notification{
+    inline-size: 2rem;
+}
+
+/* header .cart-section .notification .fas{
+    
+} */
+/* 
+header .cart-section .no{
+    z-index: 200;
+    background-color: var(--alert-color);
+    padding: .2rem;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    inline-size: 1rem;
+    block-size: 1rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+} */
+
+header .cart-section .login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    padding: auto;
+}
+
+header .nav-bar .login{
+    display: none;
+}
+
+
+header .cart-section .login img{
+    inline-size: 2rem;
+    block-size: 2rem;
+    border-radius: 50%
+}
+
+header .cart-section .login button {
+    font-weight: 700;
+    padding: .2rem .4rem;
+    border: var(--border);
+    background-color: var(--highlight-color);
+    border-radius: 1rem;
+    display: inline-block;
+    margin-top: .5rem;
+}
+
+header .cart-section .login button:hover{
+    color: white;
+    background-color: rgb(1, 0, 251);
+}
+
+header .search-div{
+    display: flex;
+    height: 2.4rem;
+    width: 22rem;
+    border: var(--border);
+    background-color: var(--highlight-color);
+    border-radius: .5rem;
+    align-items: center;
+    padding: 0 .2rem;
+    justify-content: space-between;
+    margin: 0 2rem;
+
+}
+
+header .search-div input{
+    width: 20rem;
+    height: 2rem;
+    background-color: var(--highlight-color);
+    border-radius: .5rem 0rem  0rem .5rem;
+    border: none;
+    font-size: 1rem;
+}
+
+header .search-div input:focus{
+    outline: none;
+}
+header .search-div .fas{
+    font-size: 1.5rem;
+    color: var(--main-color);
+    
+}
+
+header .search-div .fas:hover{
+    color: var(--icon-hover)
+}
+
+
+
+.products{
+    background-color:var(--background-color);
+    block-size: 100vh;
+    position: relative;
+    border: var(--border);
+    display: flex;
+    align-content: space-between;
+    flex-direction: column;
+    padding-top: 8rem;
+
+}
+
+
+.contact-us{
+    background-color: pink;
+    position: relative;
+    border: var(--border);
+    block-size: 50vh;
+}
+
+
+footer{
+    background-color: greenyellow;
+    position: relative;
+    border: var(--border);
+    height: 40vh;
+    width: auto;
+    margin: 0 4rem;
+}
+
+
+
+@media (max-width: 1400px){
+    
+    header{
+        zoom: 85%;
+        padding: 0 2rem;
+        margin: 0;
+        height: 5.5rem;
+    }
+
+    section, footer{
+        margin: 0rem;
+        padding: .5rem;
+        position: relative;
+        margin-left: 18vw;
+       
+    }
+
+    header .nav-bar{
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        top: 5.5rem;
+        left:0 ; bottom: 0; right: auto;
+        inline-size: 20vw;
+        height: 100vh;
+        background-color: var(--main-color);
+        margin: 0;
+        justify-content: space-between;
+        padding-bottom: 4rem;
+        border: none;
+
+    }
+    header .nav-bar div{
+        width: 20vw;
+        flex-direction: column;
+        padding: 0 auto;
+    }
+
+    header .nav-bar div a{
+        align-items: center;
+        justify-content: center;
+        block-size: 2.5rem;
+        color: white;
+    }
+
+    header .nav-bar div a:hover{
+        background-color: var(--icon-hover);
+    }
+  
+}
+
+
+@media (max-width: 767px){
+
+    section, footer{
+        margin: 0rem;
+        padding: 1rem;
+        position: relative;
+       
+    }
+    header .nav-bar{
+        right:-100; left:200vw;
+        inline-size: 40vw;
+
+    }
+
+    header .nav-bar.work{
+        right: 0;
+        left: auto;
+    }
+    header .nav-bar div{
+        width: 40vw;
+    }
+    
+    header .nav-bar div a{
+        align-items: center;
+        justify-content: center;
+        block-size: 2.5rem;
+        
+    }
+    header .nav-bar div a:hover{
+        background-color: var(--icon-hover);
+    }
+
+    header .nav-bar .login{
+        display: flex;
+    }
+
+
+    header .cart-section .phn-search, header .cart-section .phn-search .fas, header .cart-section .more-bar, header .cart-section .more-bar .fas{
+        display: flex;
+    }
+    header .cart-section .login{
+        display: none;
+    }
+    header .search-div{
+        position:absolute;
+        top: 5.6rem;
+        width: 80vw;
+        padding: 0 .5rem;
+        height: 3rem;
+        transform: scaleY(0);
+    
+    }
+
+    header .search-div.work{
+        transform: scaleY(1);
+    }
+    
+    header .search-div input{
+       width: 70vw;
+    }
+
+    header .nav-bar .login{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        padding: auto;
+    }
+
+    header .nav-bar .login img{
+        inline-size: 5rem;
+        block-size: 5rem;
+        border-radius: 50%
+    }
+    
+    header .nav-bar .login button{
+        font-weight: 700;
+        padding: .4rem .8rem;
+        font-size: 1.2rem;
+        background-color: var(--highlight-color);
+        border-radius: 1rem;
+        display: inline-block;
+        margin-top: .5rem;
+        background-color: white;
+    }
+
+    header .nav-bar .login button:hover{
+        color: rgb(1, 0, 251);
+        background-color: var(--highlight-color);
+        letter-spacing: .04rem;
+    }
+
+}
+
+@media (max-width: 479px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
